@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>wwwwwww</li>
+    </ul>
+    <script>
+        function addEvent(elm,evtype,callback,bool){
+            var bool=bool||false;
+            return elm.addEventListener?elm.addEventListener(evtype,callback,bool):elm.attachEvent('on'+evtype,callback);
+        }
+        function removeEvent(elm,evtype,callback,bool){
+            var bool=bool||false;
+            return elm.removeEventListener?elm.removeEventListener(evtype,callback,bool):elm.detachEvent('on'+evtype,callback);
+        }
+
+        var li=document.querySelector('li'); 
+        addEvent(li,'click',function(){
+            li.style.color='red';
+        })
+        removeEvent(li,'click',function(){
+            li.style.color='red';
+        })
+    </script>
+</body>
+</html>
